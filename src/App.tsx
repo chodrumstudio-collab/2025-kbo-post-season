@@ -2,31 +2,17 @@ import { useState, useEffect } from 'react';
 import { SplashScreen } from './components/SplashScreen';
 import { Header } from './components/Header';
 // 라이브 기능 제거됨 - 지난 결과와 남은 일정만 표시
-import { TournamentBracket } from './components/TournamentBracket';
-import { UpcomingGames } from './components/UpcomingGames';
-import { TeamSelector } from './components/TeamSelector';
-import { MVPRace } from './components/MVPRace';
-import { StatisticsTabs } from './components/StatisticsTabs';
-import { HighlightsSection } from './components/HighlightsSection';
-import { FanEngagement } from './components/FanEngagement';
-import { BottomNavigation } from './components/BottomNavigation';
 import { ScrollToTop } from './components/ScrollToTop';
-import { LiveScoreBanner } from './components/LiveScoreBanner';
 import { Toaster } from './components/ui/sonner';
 // DataStatusIndicator 제거 - API 접근 불가로 의미 없음
 
 // useRealTimeGames 제거됨 - CORS 정책으로 모든 API 차단
 
 // Page Components
-import { SchedulePage } from './components/pages/SchedulePage';
-import { StatsPage } from './components/pages/StatsPage';
-import { HighlightsPage } from './components/pages/HighlightsPage';
 import { KBOChatbot } from './components/KBOChatbot';
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
-  const [activeTab, setActiveTab] = useState('home');
-  const [selectedTeam, setSelectedTeam] = useState('all');
 
   // CORS 정책으로 모든 API 접근 차단됨 - 공식 사이트 바로가기만 제공
 
@@ -43,7 +29,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0A1628] pb-20">
+    <div className="min-h-screen bg-[#0A1628]">
       <Toaster />
       
       {/* Header */}
@@ -53,26 +39,12 @@ export default function App() {
 
       {/* Main Content */}
       <main className="relative">
-        {activeTab === 'home' && (
-          <>
+        {/* 실제 KBO 포스트시즌 데이터 바로가기 */}
+        <KBOChatbot />
 
-            {/* 실제 KBO 포스트시즌 데이터 바로가기 */}
-            <KBOChatbot />
-
-            {/* Bottom padding for fixed elements */}
-            <div className="h-8" />
-          </>
-        )}
-
-        {activeTab === 'schedule' && <SchedulePage />}
-        
-        {activeTab === 'stats' && <StatsPage />}
-        
-        {activeTab === 'highlights' && <HighlightsPage />}
+        {/* Bottom padding for fixed elements */}
+        <div className="h-8" />
       </main>
-
-      {/* Bottom Navigation */}
-      <BottomNavigation activeTab={activeTab} onTabChange={setActiveTab} />
 
       {/* Floating Action Button */}
       <ScrollToTop />

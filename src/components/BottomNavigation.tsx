@@ -1,4 +1,4 @@
-import { Home, Calendar, BarChart3, Play } from 'lucide-react';
+import { Home } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface BottomNavigationProps {
@@ -9,14 +9,11 @@ interface BottomNavigationProps {
 export function BottomNavigation({ activeTab, onTabChange }: BottomNavigationProps) {
   const tabs = [
     { id: 'home', label: '홈', icon: Home },
-    { id: 'schedule', label: '일정', icon: Calendar },
-    { id: 'stats', label: '기록', icon: BarChart3 },
-    { id: 'highlights', label: '영상', icon: Play },
   ];
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-[100] bg-[#0A1628]/95 backdrop-blur-md border-t border-[#2D3A4F] pb-safe">
-      <div className="grid grid-cols-4 h-18">
+      <div className="flex justify-center h-18">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -25,7 +22,7 @@ export function BottomNavigation({ activeTab, onTabChange }: BottomNavigationPro
             <button
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
-              className="relative flex flex-col items-center justify-center gap-1 py-2 transition-colors"
+              className="relative flex flex-col items-center justify-center gap-1 py-2 px-8 transition-colors"
             >
               <Icon
                 className={`h-6 w-6 transition-colors ${
