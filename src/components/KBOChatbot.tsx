@@ -64,9 +64,9 @@ export function KBOChatbot() {
       link: "https://www.koreabaseball.com/Schedule/Schedule.aspx"
     },
     {
-      question: "하이라이트 보고싶어",
-      answer: "YouTube에서 'KBO 2025 포스트시즌' 검색하면 최신 하이라이트 영상",
-      link: "https://www.youtube.com/results?search_query=KBO+2025+포스트시즌"
+      question: "역대 한국시리즈 우승팀이 궁금해",
+      answer: "KBO 역대 한국시리즈 우승팀 정리 영상과 역사를 확인해보세요",
+      link: "https://www.youtube.com/results?search_query=KBO+역대+한국시리즈+우승팀+역사"
     }
   ];
 
