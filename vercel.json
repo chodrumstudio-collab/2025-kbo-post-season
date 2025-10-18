@@ -1,32 +1,16 @@
 {
   "name": "2025-kbo-postseason",
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
+  "buildCommand": "yarn build",
+  "outputDirectory": "dist",
   "routes": [
     {
       "src": "/(.*)",
       "dest": "/index.html"
     }
   ],
-  "functions": {
-    "src/**/*.{js,ts}": {
-      "runtime": "@vercel/node@latest"
-    }
-  },
   "env": {
-    "NODE_ENV": "production"
-  },
-  "build": {
-    "env": {
-      "VITE_APP_TITLE": "2025 KBO 포스트시즌"
-    }
+    "NODE_ENV": "production",
+    "VITE_APP_TITLE": "2025 KBO 포스트시즌"
   }
 }
