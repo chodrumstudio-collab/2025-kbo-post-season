@@ -19,8 +19,6 @@ interface Message {
 
 const quickQuestions = [
   "2025 KBO 포스트시즌 현재 상황은?",
-  "와일드카드 결과 어떻게 됐어?",
-  "준플레이오프 누가 이겼어?", 
   "한국시리즈 언제 시작해?",
   "오늘 KBO 경기 있어?"
 ];
@@ -60,16 +58,6 @@ export function KBOChatbot() {
   ];
 
   const quickInfo = [
-    {
-      question: "와일드카드 결과는?",
-      answer: "KBO 공식사이트 → 경기결과 → 포스트시즌에서 확인",
-      link: "https://www.koreabaseball.com"
-    },
-    {
-      question: "준플레이오프 현재 상황?",
-      answer: "네이버 스포츠 → KBO → 포스트시즌 대진표에서 실시간 확인",
-      link: "https://sports.news.naver.com/kbaseball/schedule/index"
-    },
     {
       question: "한국시리즈 언제?",
       answer: "KBO 공식 일정표에서 플레이오프 결과에 따른 확정 일정 확인",
