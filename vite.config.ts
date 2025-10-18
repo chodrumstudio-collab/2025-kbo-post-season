@@ -5,7 +5,7 @@
 
   export default defineConfig({
     plugins: [react()],
-    base: './',
+    base: '/',
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
@@ -53,6 +53,12 @@
     build: {
       target: 'esnext',
       outDir: 'build',
+      assetsDir: 'assets',
+      rollupOptions: {
+        output: {
+          manualChunks: undefined
+        }
+      }
     },
     server: {
       port: 3000,
