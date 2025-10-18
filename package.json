@@ -51,12 +51,15 @@
     "devDependencies": {
         "@types/node": "^20.10.0",
         "@vitejs/plugin-react-swc": "^3.10.2",
+        "gh-pages": "^6.3.0",
         "vite": "6.3.5"
     },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "yarn build && vercel --prod"
-  }
+    "deploy": "yarn build && gh-pages -d build",
+    "deploy-vercel": "yarn build && vercel --prod"
+  },
+  "homepage": "https://chodrumstudio-collab.github.io/2025-kbo-post-season"
 }
